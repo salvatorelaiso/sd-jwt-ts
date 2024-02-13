@@ -1,0 +1,1 @@
+{"version":3,"file":"VerificationResult.js","sourceRoot":"","sources":["../../../../node/src/VerificationResult.ts"],"names":[],"mappings":"AAeA,MAAM,CAAC,MAAM,yBAAyB,GAAG,CACxC,KAAY,EACZ,iBAA0B,EAC1B,mBAA4B,EAC5B,OAAuB,EACF,EAAE;IACvB,OAAO;QACN,KAAK;QACL,iBAAiB;QACjB,mBAAmB;QACnB,OAAO;QACP,QAAQ,EAAE,iBAAiB,IAAI,mBAAmB;KAClD,CAAC;AACH,CAAC,CAAC"}
