@@ -215,6 +215,7 @@ export class SDJwt extends Object {
 	 * @param options optional pass-through options.
 	 */
 	static async signAsync(
+		header: {[x: string]: any},
 		sdPayload: SDPayload,
 		jwtCryptoProvider: AsyncJWTCryptoProvider,
 		keyId: string | undefined | null = null,
@@ -222,7 +223,7 @@ export class SDJwt extends Object {
 		options?: any
 	): Promise<SDJwt> {
 		return SDJwt.createFromSignedJWT(
-			await jwtCryptoProvider.signAsync(sdPayload.undisclosedPayload, keyId, options),
+			await jwtCryptoProvider.signAsync(header, sdPayload.undisclosedPayload, keyId, options),
 			sdPayload,
 			withHolderJwt
 		);

@@ -11,9 +11,9 @@ export class CompactAsyncJWTCryptoProvider implements AsyncJWTCryptoProvider {
 		private readonly verifyOptions?: JWTVerifyOptions
 	) {}
 
-	async signAsync(payload: JSONObject, keyId?: string | null): Promise<string> {
+	async signAsync(header: any, payload: JSONObject, keyId?: string | null): Promise<string> {
 		const jwt = await new SignJWT(payload)
-			.setProtectedHeader({ alg: this.algorithm, kid: keyId || undefined, typ: 'JWT' })
+			.setProtectedHeader({ ...header, kid: keyId ?? header.kid })
 			.sign(this.keyParam, this.signOptions);
 		return jwt;
 	}

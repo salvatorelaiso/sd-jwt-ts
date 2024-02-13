@@ -12,7 +12,7 @@ export interface AsyncJWTCryptoProvider {
 	 * @param keyId optional key ID of the signing key to be used, if required by the underlying crypto library.
 	 * @param options optional pass-through options to be used by the underlying crypto library, if applicable.
 	 */
-	signAsync(payload: JSONObject, keyId?: string | null, options?: any): Promise<string>;
+	signAsync(header: any, payload: JSONObject, keyId?: string | null, options?: any): Promise<string>;
 
 	/**
 	 * Interface method for verifying a JWT signature, with an optional set of pass-through options.
